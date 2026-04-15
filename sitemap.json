@@ -1,0 +1,9 @@
+{
+  "desc": "party_assemble sitemap",
+  "rules": [
+    {
+      "action": "allow",
+      "page": "*"
+    }
+  ]
+}

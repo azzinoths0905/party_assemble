@@ -1,0 +1,41 @@
+<view class="page-shell history-page" wx:if="{{userProfile}}">
+  <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
+
+  <view class="page-header">
+    <view class="header-side">
+      <view class="icon-pill" bindtap="goBack">返回</view>
+    </view>
+    <view class="header-title">我们哪里见</view>
+    <view class="header-side header-side--right">
+      <view class="icon-pill" bindtap="goHome">首页</view>
+    </view>
+  </view>
+
+  <view class="history-page__profile">
+    <view class="avatar-badge" style="background: {{userProfile.accent}};">{{userProfile.avatarText}}</view>
+    <view class="history-page__name">{{userProfile.name}}</view>
+    <view class="history-page__links">推荐给朋友 | 建议反馈 | 更多</view>
+    <view class="history-page__intro">你发起的和你参与的碰面都在这里</view>
+  </view>
+
+  <block wx:for="{{historyMeetups}}" wx:key="id">
+    <view
+      class="card history-page__item"
+      data-title="{{item.title}}"
+      data-point="{{item.meetupPoint.name}}"
+      bindtap="showMeetupDetail"
+    >
+      <view class="history-page__item-top">
+        <view class="history-page__date">{{item.dateLabel}}</view>
+        <view class="history-page__status">{{item.statusLabel}}</view>
+      </view>
+      <view class="history-page__summary">{{item.summary}}</view>
+      <view class="history-page__point">{{item.meetupPoint.name}} · {{item.meetupPoint.detail}}</view>
+      <view class="history-page__avatars">
+        <block wx:for="{{item.participants}}" wx:for-item="participant" wx:key="name">
+          <view class="avatar-badge history-page__avatar" style="background: {{participant.accent}};">{{participant.avatarText}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>

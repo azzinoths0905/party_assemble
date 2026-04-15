@@ -1,0 +1,73 @@
+.history-page__profile {
+  padding: 24rpx 0 12rpx;
+}
+
+.history-page__name {
+  margin-top: 24rpx;
+  font-size: 64rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.history-page__links {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  color: #61739d;
+}
+
+.history-page__intro {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  line-height: 1.5;
+  color: #9ca3af;
+}
+
+.history-page__item {
+  margin-top: 28rpx;
+  padding: 32rpx 40rpx 40rpx;
+}
+
+.history-page__item-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24rpx;
+}
+
+.history-page__date {
+  font-size: 72rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.history-page__status {
+  padding-top: 18rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #374151;
+}
+
+.history-page__summary {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+  color: #6b7280;
+}
+
+.history-page__point {
+  margin-top: 18rpx;
+  font-size: 26rpx;
+  color: #61739d;
+}
+
+.history-page__avatars {
+  display: flex;
+  align-items: center;
+  gap: 16rpx;
+  margin-top: 42rpx;
+}
+
+.history-page__avatar {
+  width: 76rpx;
+  height: 76rpx;
+  font-size: 24rpx;
+}

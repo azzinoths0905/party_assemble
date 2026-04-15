@@ -10,9 +10,9 @@ This file provides repo-specific guidance for coding agents and contributors wor
 
 ## Current State
 
-- The repository is currently design-first and has not been scaffolded yet.
-- Do not assume a specific Mini Program framework, state library, package manager, or map SDK until those files exist in the repo.
-- When adding tooling or dependencies later, document the real choices in `README.md`.
+- The repository now contains a native WeChat Mini Program scaffold.
+- Keep new implementation work aligned with the native Mini Program structure already present in `app.js`, `app.json`, `pages/`, and `project.config.json` unless the user explicitly asks for a framework migration.
+- The current app uses local mock data only. Do not imply that participant sync, invitations, or place search are real until those capabilities are implemented.
 
 ## Product Priorities
 
@@ -28,7 +28,6 @@ When implementing features, prioritize the following user journey:
 
 Treat these files as the baseline UI reference:
 
-- `original-design/landing.png`
 - `original-design/homepage.png`
 - `original-design/invite.png`
 - `original-design/address-picker.png`
@@ -42,7 +41,9 @@ If product or implementation decisions conflict with the screenshots, call that 
 - Prefer small, reversible changes over broad speculative setup.
 - Keep naming aligned with the meetup domain: meetup, participant, location, recommendation, history.
 - Do not add fake setup instructions or placeholder commands that are not backed by actual files in the repo.
+- Reuse the built-in Mini Program primitives first. If you introduce a third-party UI kit, map SDK, or framework, document why.
 - Update `README.md` whenever implementation changes make the current project status or setup instructions outdated.
+- Use `npm run smoke:miniprogram` when validating the current page flow in WeChat Developer Tools. It is the repo's current automated UI check.
 
 ## Documentation Expectations
 

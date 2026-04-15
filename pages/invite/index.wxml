@@ -1,0 +1,59 @@
+<view class="page-shell invite-page" wx:if="{{meetup}}">
+  <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
+
+  <view class="page-header">
+    <view class="header-side">
+      <view class="icon-pill" bindtap="goBack">‹</view>
+    </view>
+    <view class="header-title">我们哪里见</view>
+    <view class="header-side header-side--right"></view>
+  </view>
+
+  <view class="invite-page__hero">
+    <view class="section-title">我发起的碰面</view>
+    <view class="invite-page__finish" bindtap="finishMeetup">结束碰面</view>
+  </view>
+
+  <view class="card map-card invite-page__map">
+    <map
+      class="map-frame"
+      latitude="{{mapCenter.latitude}}"
+      longitude="{{mapCenter.longitude}}"
+      scale="15"
+      show-location="{{false}}"
+    ></map>
+    <view class="invite-page__map-pin invite-page__map-pin--meetup"></view>
+    <view class="invite-page__map-pin invite-page__map-pin--organizer"></view>
+  </view>
+
+  <view class="card invite-page__participants">
+    <view class="invite-page__participants-header">
+      <view class="invite-page__participants-title">等待朋友加入...</view>
+      <view class="invite-page__participants-add" bindtap="addParticipant">+ 手动添加</view>
+    </view>
+
+    <view class="invite-page__participant-row">
+      <view class="avatar-badge" style="background: {{meetup.organizer.accent}};">{{meetup.organizer.avatarText}}</view>
+      <view class="invite-page__participant-copy">
+        <view class="invite-page__participant-name">{{meetup.organizer.name}}</view>
+        <view class="invite-page__participant-location">{{meetup.organizer.location.name}}</view>
+      </view>
+      <view class="invite-page__chevron">></view>
+    </view>
+
+    <block wx:for="{{meetup.participants}}" wx:key="id">
+      <view class="invite-page__participant-row">
+        <view class="avatar-badge" style="background: {{item.accent}};">{{item.avatarText}}</view>
+        <view class="invite-page__participant-copy">
+          <view class="invite-page__participant-name">{{item.name}}</view>
+          <view class="invite-page__participant-location">{{item.location.name}}</view>
+        </view>
+        <view class="invite-page__chevron">></view>
+      </view>
+    </block>
+
+    <button class="text-button invite-page__invite-more" bindtap="addParticipant">+ 邀请朋友加入</button>
+  </view>
+
+  <button class="primary-button invite-page__primary" bindtap="showMeetupPoint">查看碰面位置</button>
+</view>

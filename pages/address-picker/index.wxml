@@ -1,0 +1,44 @@
+<view class="address-picker-page">
+  <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
+
+  <view class="address-picker-page__header">
+    <view class="address-picker-page__action" bindtap="cancel">取消</view>
+    <view class="address-picker-page__action address-picker-page__action--primary" bindtap="confirmSelection">确定</view>
+  </view>
+
+  <view class="address-picker-page__search">
+    <input
+      class="address-picker-page__input"
+      placeholder="搜索地点"
+      value="{{keyword}}"
+      bindinput="handleKeywordChange"
+    />
+  </view>
+
+  <view class="address-picker-page__map-wrap">
+    <map
+      class="address-picker-page__map"
+      latitude="{{mapCenter.latitude}}"
+      longitude="{{mapCenter.longitude}}"
+      scale="16"
+      show-location="{{false}}"
+    ></map>
+    <view class="address-picker-page__pin"></view>
+  </view>
+
+  <view class="address-picker-page__results">
+    <block wx:if="{{results.length}}">
+      <block wx:for="{{results}}" wx:key="id">
+        <view
+          class="address-picker-page__result {{selectedId === item.id ? 'address-picker-page__result--active' : ''}}"
+          data-location-id="{{item.id}}"
+          bindtap="selectLocation"
+        >
+          <view class="address-picker-page__result-name">{{item.name}}</view>
+          <view class="address-picker-page__result-detail">{{item.detail}}</view>
+        </view>
+      </block>
+    </block>
+    <view class="address-picker-page__empty" wx:else>没有找到匹配地点，试试更短的关键词。</view>
+  </view>
+</view>

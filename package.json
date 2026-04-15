@@ -1,0 +1,24 @@
+{
+  "name": "party_assemble",
+  "version": "1.0.0",
+  "description": "`party_assemble` is a native WeChat Mini Program for finding the most convenient meetup place for multiple people.",
+  "main": "app.js",
+  "scripts": {
+    "smoke:miniprogram": "node scripts/miniprogram-smoke.js",
+    "test": "npm run smoke:miniprogram"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azzinoths0905/party_assemble.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azzinoths0905/party_assemble/issues"
+  },
+  "homepage": "https://github.com/azzinoths0905/party_assemble#readme",
+  "devDependencies": {
+    "miniprogram-automator": "^0.12.1"
+  }
+}

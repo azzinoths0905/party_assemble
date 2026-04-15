@@ -1,0 +1,41 @@
+<view class="page-shell home-page" wx:if="{{meetup}}">
+  <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
+
+  <view class="page-header">
+    <view class="header-side">
+      <view class="icon-pill">⌂</view>
+    </view>
+    <view class="header-title">我们哪里见</view>
+    <view class="header-side header-side--right"></view>
+  </view>
+
+  <view class="home-page__hero">
+    <view class="section-title">开启新的碰面</view>
+    <view class="nav-pill" bindtap="openHistory">碰面记录</view>
+  </view>
+
+  <view class="card map-card home-page__map">
+    <map
+      class="map-frame"
+      latitude="{{mapCenter.latitude}}"
+      longitude="{{mapCenter.longitude}}"
+      scale="16"
+      show-location="{{false}}"
+    ></map>
+    <view class="home-page__map-pin"></view>
+    <view class="home-page__map-control">◎</view>
+  </view>
+
+  <view class="card home-page__location" bindtap="pickOrganizerLocation">
+    <view class="home-page__location-icon">我</view>
+    <view class="home-page__location-copy">
+      <view class="home-page__location-label">我在</view>
+      <view class="home-page__location-name">{{meetup.organizer.location.name}}</view>
+      <view class="home-page__location-detail">{{meetup.organizer.location.detail}}</view>
+    </view>
+    <view class="home-page__chevron">></view>
+  </view>
+
+  <button class="primary-button home-page__primary" bindtap="openInvite">邀请朋友参与碰面</button>
+  <button class="text-button home-page__secondary" bindtap="openInvite">手动添加朋友位置</button>
+</view>
