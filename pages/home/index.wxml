@@ -2,9 +2,7 @@
   <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
 
   <view class="page-header">
-    <view class="header-side">
-      <view class="icon-pill">⌂</view>
-    </view>
+    <view class="header-side"></view>
     <view class="header-title">我们哪里见</view>
     <view class="header-side header-side--right"></view>
   </view>
@@ -37,5 +35,7 @@
   </view>
 
   <button class="primary-button home-page__primary" bindtap="openInvite">邀请朋友参与碰面</button>
-  <button class="text-button home-page__secondary" bindtap="openInvite">手动添加朋友位置</button>
+  <view class="home-page__secondary-row">
+    <view class="text-button home-page__secondary" bindtap="openInvite">手动添加朋友位置</view>
+  </view>
 </view>

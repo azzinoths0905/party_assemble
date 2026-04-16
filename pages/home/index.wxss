@@ -105,7 +105,14 @@
   margin-top: 140rpx;
 }
 
-.home-page__secondary {
+.home-page__secondary-row {
+  display: flex;
+  justify-content: center;
   margin-top: 24rpx;
+}
+
+.home-page__secondary {
+  padding: 0;
+  line-height: 1.4;
   background: transparent;
 }

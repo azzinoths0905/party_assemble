@@ -16,16 +16,6 @@ Page({
     });
   },
 
-  goBack() {
-    wx.navigateBack();
-  },
-
-  goHome() {
-    wx.reLaunch({
-      url: '/pages/home/index',
-    });
-  },
-
   showMeetupDetail(event) {
     const { title, point } = event.currentTarget.dataset;
     wx.showToast({

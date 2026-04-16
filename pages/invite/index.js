@@ -23,10 +23,6 @@ Page({
     });
   },
 
-  goBack() {
-    wx.navigateBack();
-  },
-
   addParticipant() {
     wx.navigateTo({
       url: '/pages/address-picker/index?target=participant',

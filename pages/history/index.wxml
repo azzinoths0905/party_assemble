@@ -2,13 +2,9 @@
   <view class="status-bar-spacer" style="height: {{statusBarHeight}}px;"></view>
 
   <view class="page-header">
-    <view class="header-side">
-      <view class="icon-pill" bindtap="goBack">返回</view>
-    </view>
+    <view class="header-side"></view>
     <view class="header-title">我们哪里见</view>
-    <view class="header-side header-side--right">
-      <view class="icon-pill" bindtap="goHome">首页</view>
-    </view>
+    <view class="header-side header-side--right"></view>
   </view>
 
   <view class="history-page__profile">
